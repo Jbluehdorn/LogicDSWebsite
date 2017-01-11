@@ -1,0 +1,19 @@
+@import "transitions.scss";
+
+header {
+  h1 {
+    position: relative;
+    left: -50px;
+    animation: fadein 1s, fromleft 1s forwards;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+
+      &:hover {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+  }
+}
