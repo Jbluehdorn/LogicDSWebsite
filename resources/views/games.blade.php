@@ -1,6 +1,6 @@
 @extends("layouts.master")
 
-@section("title", "games")
+@section("title", "Games")
 
 @section("content")
     Coming soon!

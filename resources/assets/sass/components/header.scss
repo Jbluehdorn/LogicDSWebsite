@@ -10,7 +10,7 @@ header {
       text-decoration: none;
       color: inherit;
 
-      &:hover {
+      &:hover, &:active, &:visited {
         text-decoration: none;
         color: inherit;
       }
