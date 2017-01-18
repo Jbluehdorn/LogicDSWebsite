@@ -1,31 +1,27 @@
 $nav-margins: -30px;
-$ribbon-position: -42px;
+$ribbon-position: -3em;
 
 #mainNavigation {
-  background: $secondary-color;
+  background: $primary-color;
   margin: 0 $nav-margins 0 $nav-margins;
   border-radius: 0;
-  border: 0px;
+  border: 0;
 
-  //box-shadow: $primary-color 1px 1px 1px;
-
-  border-color: $tertiary-color;
   a {
-    color: $header-color;
+    color: $font-color;
   }
 
   &:after, &:before {
     content: "";
     position: absolute;
     display: block;
-    bottom: -1em;
-    border: 1.5em solid $tertiary-color;
+    border: 1.5em solid $secondary-color;
     z-index: -1;
+    bottom: $ribbon-position;
   }
 
   &:after {
     right: 0;
-    bottom: $ribbon-position;
     border-left-width: 1.5em;
     border-right-color: transparent;
     border-bottom-color: transparent;
@@ -33,7 +29,6 @@ $ribbon-position: -42px;
 
   &:before {
     left: 0;
-    bottom: $ribbon-position;
     border-right-width: 1.5em;
     border-left-color: transparent;
     border-bottom-color: transparent;

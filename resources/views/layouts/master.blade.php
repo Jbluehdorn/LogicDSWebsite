@@ -32,7 +32,7 @@
         {{--</div>--}}
     </header>
 
-    <div class="container" id="main-content">
+    <div class="col-xs-12" id="main-content">
         @yield('content')
     </div>
 </div>
