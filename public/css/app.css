@@ -7698,6 +7698,10 @@ button.close {
   margin-top: 5px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0 !important;
+}
+
 @-webkit-keyframes fadein {
   from {
     opacity: 0;
@@ -7746,11 +7750,16 @@ button.close {
   }
 }
 
+header {
+  padding: 15px;
+}
+
 header h1 {
   position: relative;
   left: -50px;
   -webkit-animation: fadein 1s, fromleft 1s forwards;
   animation: fadein 1s, fromleft 1s forwards;
+  color: #eee;
 }
 
 header h1 a {
@@ -7761,6 +7770,61 @@ header h1 a {
 header h1 a:hover, header h1 a:active, header h1 a:visited {
   text-decoration: none;
   color: inherit;
+}
+
+#mainNavigation {
+  background: #666;
+  margin: 0 -30px 0 -30px;
+  border-radius: 0;
+  border: 0px;
+  border-color: #999;
+}
+
+#mainNavigation a {
+  color: #eee;
+}
+
+#mainNavigation:after, #mainNavigation:before {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: -1em;
+  border: 1.5em solid #999;
+  z-index: -1;
+}
+
+#mainNavigation:after {
+  right: 0;
+  bottom: -42px;
+  border-left-width: 1.5em;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+
+#mainNavigation:before {
+  left: 0;
+  bottom: -42px;
+  border-right-width: 1.5em;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+
+body {
+  background: #111;
+  color: #ddd;
+}
+
+body, html {
+  height: 100%;
+}
+
+#body-content {
+  background: #333;
+  height: 100%;
+}
+
+#main-content {
+  padding: 0 15px;
 }
 
 /*# sourceMappingURL=app.css.map */

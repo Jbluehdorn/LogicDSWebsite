@@ -1,10 +1,13 @@
 @import "transitions.scss";
 
 header {
+  padding: $header-padding;
+
   h1 {
     position: relative;
     left: -50px;
     animation: fadein 1s, fromleft 1s forwards;
+    color: $header-color;
 
     a {
       text-decoration: none;

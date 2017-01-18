@@ -18,5 +18,5 @@ Vue.component('new-user-form', require('./components/new_user_form.vue'));
 Vue.component('all-users-table', require('./components/all_users_table.vue'))
 
 const app = new Vue({
-    el: '#app'
+    el: '#body-content'
 });

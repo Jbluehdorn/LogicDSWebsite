@@ -20,6 +20,7 @@ Route::get('/contact', 'HomeController@contact');
 Route::get('/admin', 'AdminController@home');
 Route::get('/admin/new', 'AdminController@newUser');
 Route::get('/admin/logout', 'AdminController@logout');
+Route::get('/admin/account/{id}', 'AdminController@account');
 Route::post('/admin/post_user', 'AdminController@store');
 
 Route::get('/test', function() {

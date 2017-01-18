@@ -16,30 +16,31 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 </head>
-<body>
-<div id="app">
+<body class="container">
+<div id="body-content">
     <header>
-        <div class="container">
-            <h1><a href="/admin">Logic Development Studios</a></h1>
-            <nav class="navbar navbar-default" id="mainNavigation">
-                <div class="container-fluid">
-                    <ul class="navbar-nav nav">
-                        <li><a href="/admin">Home</a></li>
-                        @if(Auth::user() && Auth::user()->isAdmin)
-                        <li><a href="/admin/new">New User</a></li>
-                        @endif
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        @if(Auth::user())
-                        <li><a href="/admin/logout"><i class="fa fa-power-off" aria-hidden="true"></i></a></li>
-                        @endif
-                    </ul>
-                </div>
-            </nav>
-        </div>
+        <h1><a href="/admin">Logic Development Studios</a></h1>
+        <nav class="navbar navbar-default" id="mainNavigation">
+            <div class="container-fluid">
+                <ul class="navbar-nav nav">
+                    <li><a href="/admin">Home</a></li>
+                    @if(Auth::user())
+                    <li><a href="/admin/account/{{Auth::User()->id}}">Account</a></li>
+                    @if(Auth::user()->isAdmin)
+                    <li><a href="/admin/new">New User</a></li>
+                    @endif
+                    @endif
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    @if(Auth::user())
+                    <li><a href="/admin/logout"><i class="fa fa-power-off" aria-hidden="true"></i></a></li>
+                    @endif
+                </ul>
+            </div>
+        </nav>
     </header>
 
-    <div class="container" id="main-content">
+    <div id="main-content">
         @yield('content')
     </div>
 </div>

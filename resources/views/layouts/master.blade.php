@@ -14,21 +14,10 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
 
 </head>
-<body>
-<div>
-    {{--@if (Route::has('login'))--}}
-        {{--<div class="top-right links">--}}
-            {{--@if (Auth::check())--}}
-                {{--<a href="{{ url('/home') }}">Home</a>--}}
-            {{--@else--}}
-                {{--<a href="{{ url('/login') }}">Login</a>--}}
-                {{--<a href="{{ url('/register') }}">Register</a>--}}
-            {{--@endif--}}
-        {{--</div>--}}
-    {{--@endif--}}
-
+<body class="container">
+<div id="body-content">
     <header>
-        <div class="container">
+        {{--<div class="container">--}}
             <h1><a href="/home">Logic Development Studios</a></h1>
             <nav class="navbar navbar-default" id="mainNavigation">
                 <div class="container-fluid">
@@ -40,7 +29,7 @@
                     </ul>
                 </div>
             </nav>
-        </div>
+        {{--</div>--}}
     </header>
 
     <div class="container" id="main-content">

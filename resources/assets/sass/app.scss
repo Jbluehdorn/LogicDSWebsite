@@ -1,3 +1,11 @@
+$primary-color: #333;
+$secondary-color: #666;
+$tertiary-color: #999;
+
+$font-color: #ddd;
+$header-color: #eee;
+
+$header-padding: 15px;
 
 // Fonts
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
@@ -13,3 +21,23 @@
 @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
 
 @import "components/header.scss";
+@import "components/navigation.scss";
+
+
+body {
+  background: #111;
+  color: $font-color;
+}
+
+body, html {
+  height: 100%;
+}
+
+#body-content {
+  background: $primary-color;
+  height: 100%;
+}
+
+#main-content {
+  padding: 0 15px;
+}

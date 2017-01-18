@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Hash;
 use App\User;
 use Auth;
+Use DB;
 
 class AdminController extends Controller
 {
@@ -26,6 +27,17 @@ class AdminController extends Controller
     public function logout() {
         Auth::logout();
         return redirect('/admin');
+    }
+
+    public function account(Request $request) {
+        if($request->id == Auth::User()->id) {
+            return view('admin/my_account');
+        } else {
+            $user = DB::table('users')
+                ->where('id', $request->id)
+                ->first();
+            return view('admin/account')->with('user', $user);
+        }
     }
 
     public function store(Request $request) {
