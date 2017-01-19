@@ -43,6 +43,12 @@
     <div class="col-xs-12" id="main-content">
         @yield('content')
     </div>
+
+    <footer class="col-xs-12">
+        <p class="col-xs-12" id="copyright">
+            Logic Development Studios &copy; {{\Carbon\Carbon::now()->year}}
+        </p>
+    </footer>
 </div>
 
 <script src="{{asset('js/app.js')}}"></script>

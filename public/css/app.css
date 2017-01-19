@@ -7689,6 +7689,16 @@ button.close {
   }
 }
 
+.btn-primary {
+  background-color: #139696;
+  border-color: #027C7C;
+}
+
+.btn-primary:hover, .btn-primary:active {
+  background-color: #027C7C !important;
+  border-color: #006262 !important;
+}
+
 .panel {
   margin-top: 5px;
   margin-bottom: 5px;
@@ -7805,7 +7815,7 @@ header h1 a:hover, header h1 a:active, header h1 a:visited {
   content: "";
   position: absolute;
   display: block;
-  border: 0.5em solid #2FA1A1;
+  border: 0.5em solid #5BB;
   z-index: -1;
   bottom: -1em;
 }
@@ -7830,9 +7840,17 @@ footer {
   background-color: #888;
 }
 
+footer p#copyright {
+  text-align: center;
+  color: #CCC;
+  font-size: .85em;
+}
+
 footer ul {
   margin-top: 5px;
   padding-left: 0;
+  color: #ddd;
+  font-size: .9em;
 }
 
 footer ul li {
@@ -7849,17 +7867,11 @@ footer ul li a {
   display: block;
   width: 100%;
   height: 100%;
-  -webkit-transition: font-size .5s;
-  transition: font-size .5s;
 }
 
 footer ul li a:hover, footer ul li a:visited, footer ul li a:active, footer ul li a:link {
   color: #ddd;
   text-decoration: none;
-}
-
-footer ul li a:hover {
-  font-size: 1.1em;
 }
 
 body {

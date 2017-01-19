@@ -1,3 +1,13 @@
+.btn-primary {
+  background-color: $primary-color;
+  border-color: $tertiary-color;
+
+  &:hover, &:active {
+    background-color: $tertiary-color !important;
+    border-color: $quadrinary-color !important;
+  }
+}
+
 .panel {
   margin-top: 5px;
   margin-bottom: 5px;

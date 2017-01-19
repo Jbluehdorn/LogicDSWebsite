@@ -7,5 +7,6 @@
 <h1>User not found!</h1>
 @else
 <h1>{{$user->name}}</h1>
+
 @endif
 @endsection

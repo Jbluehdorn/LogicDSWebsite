@@ -1,9 +1,6 @@
-$nav-margins: -2em;
-$ribbon-position: -1em;
-
 #mainNavigation {
   background: $primary-color;
-  margin: 0 $nav-margins 0 $nav-margins;
+  margin: 0 -2em 0 -2em;
   border-radius: 0;
   border: 0;
 
@@ -21,7 +18,7 @@ $ribbon-position: -1em;
     display: block;
     border: .5em solid $secondary-color;
     z-index: -1;
-    bottom: $ribbon-position;
+    bottom: -1em;
   }
 
   &:after {

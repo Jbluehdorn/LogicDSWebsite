@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 //use App\Http\Requests;
 use Hash;
@@ -30,14 +31,13 @@ class AdminController extends Controller
     }
 
     public function account(Request $request) {
-        if($request->id == Auth::User()->id) {
-            return view('admin/my_account');
-        } else {
-            $user = DB::table('users')
-                ->where('id', $request->id)
-                ->first();
-            return view('admin/account')->with('user', $user);
-        }
+        $isAdmin = Auth::User()->isAdmin;
+        $isUser = $request->id == Auth::User()->id;
+        $user = $isUser ? Auth::User() : DB::table('users')
+            ->where('id', $request->id)
+            ->first();
+
+        return view('admin/account')->with(compact('isUser', 'user', 'isAdmin'));
     }
 
     public function store(Request $request) {
