@@ -35,6 +35,15 @@
     <div class="col-xs-12" id="main-content">
         @yield('content')
     </div>
+
+    <footer class="col-xs-12">
+        <ul class="col-xs-8 col-xs-offset-2">
+            <li class="col-xs-3"><a href="/home">Mission Statement</a></li>
+            <li class="col-xs-3"><a href="/games">Games</a></li>
+            <li class="col-xs-3"><a href="/staff">About Us</a></li>
+            <li class="col-xs-3"><a href="/contact">Contact</a></li>
+        </ul>
+    </footer>
 </div>
 </body>
 </html>

@@ -1,5 +1,5 @@
-$nav-margins: -30px;
-$ribbon-position: -3em;
+$nav-margins: -2em;
+$ribbon-position: -1em;
 
 #mainNavigation {
   background: $primary-color;
@@ -9,27 +9,31 @@ $ribbon-position: -3em;
 
   a {
     color: $font-color;
+    transition: font-size .5s;
+    &:hover {
+      font-size: 1.1em;
+    }
   }
 
   &:after, &:before {
     content: "";
     position: absolute;
     display: block;
-    border: 1.5em solid $secondary-color;
+    border: .5em solid $secondary-color;
     z-index: -1;
     bottom: $ribbon-position;
   }
 
   &:after {
     right: 0;
-    border-left-width: 1.5em;
+    border-left-width: .5em;
     border-right-color: transparent;
     border-bottom-color: transparent;
   }
 
   &:before {
     left: 0;
-    border-right-width: 1.5em;
+    border-right-width: .5em;
     border-left-color: transparent;
     border-bottom-color: transparent;
   }

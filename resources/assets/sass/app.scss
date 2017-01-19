@@ -1,5 +1,6 @@
 $background-color: #494949;
 $secondary-background-color: #666;
+$footer-background-color: #888;
 
 $primary-color: #139696;
 $secondary-color: #2FA1A1;
@@ -25,6 +26,7 @@ $header-padding: 15px;
 
 @import "components/header.scss";
 @import "components/navigation.scss";
+@import "components/footer.scss";
 
 
 body {

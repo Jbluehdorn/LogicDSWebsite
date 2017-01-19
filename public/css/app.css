@@ -7786,36 +7786,80 @@ header h1 a:hover, header h1 a:active, header h1 a:visited {
 
 #mainNavigation {
   background: #139696;
-  margin: 0 -30px 0 -30px;
+  margin: 0 -2em 0 -2em;
   border-radius: 0;
   border: 0;
 }
 
 #mainNavigation a {
   color: #ddd;
+  -webkit-transition: font-size .5s;
+  transition: font-size .5s;
+}
+
+#mainNavigation a:hover {
+  font-size: 1.1em;
 }
 
 #mainNavigation:after, #mainNavigation:before {
   content: "";
   position: absolute;
   display: block;
-  border: 1.5em solid #2FA1A1;
+  border: 0.5em solid #2FA1A1;
   z-index: -1;
-  bottom: -3em;
+  bottom: -1em;
 }
 
 #mainNavigation:after {
   right: 0;
-  border-left-width: 1.5em;
+  border-left-width: .5em;
   border-right-color: transparent;
   border-bottom-color: transparent;
 }
 
 #mainNavigation:before {
   left: 0;
-  border-right-width: 1.5em;
+  border-right-width: .5em;
   border-left-color: transparent;
   border-bottom-color: transparent;
+}
+
+footer {
+  margin-top: 5px;
+  border-top: 5px solid #777;
+  background-color: #888;
+}
+
+footer ul {
+  margin-top: 5px;
+  padding-left: 0;
+}
+
+footer ul li {
+  list-style-type: none;
+  text-align: center;
+  border-left: 1px solid #ddd;
+}
+
+footer ul li:first-child {
+  border-left: none;
+}
+
+footer ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: font-size .5s;
+  transition: font-size .5s;
+}
+
+footer ul li a:hover, footer ul li a:visited, footer ul li a:active, footer ul li a:link {
+  color: #ddd;
+  text-decoration: none;
+}
+
+footer ul li a:hover {
+  font-size: 1.1em;
 }
 
 body {
