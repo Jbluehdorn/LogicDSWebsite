@@ -14,6 +14,7 @@ class AdminController extends Controller
 {
     public function __construct() {
         $this->middleware('auth');
+        $this->middleware('checkStaff', ['except' => 'logout']);
     }
 
     public function home() {
@@ -43,7 +44,7 @@ class AdminController extends Controller
     public function store(Request $request) {
         $request->merge(['password' => Hash::make($request->password)]);
 
-        $user = User::create($request->all());
+        User::create($request->all());
 
         return redirect('/admin');
     }

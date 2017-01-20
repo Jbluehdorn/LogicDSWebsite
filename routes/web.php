@@ -22,6 +22,9 @@ Route::get('/admin/new', 'AdminController@newUser');
 Route::get('/admin/logout', 'AdminController@logout');
 Route::get('/admin/account/{id}', 'AdminController@account');
 Route::post('/admin/post_user', 'AdminController@store');
+Route::get('/admin/unauthorized', function() {
+    return view('admin/unauthorized_access');
+});
 
 Route::get('/test', function() {
     return view('test');
