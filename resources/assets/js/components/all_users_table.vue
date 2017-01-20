@@ -1,12 +1,13 @@
 <template>
     <div>
-        <table class="table table-hover">
+        <table class="table">
             <thead>
             <tr>
                 <th>&nbsp;</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Admin</th>
+                <th>&nbsp;</th>
             </tr>
             </thead>
             <tbody>
@@ -15,11 +16,11 @@
                 <td>{{user.name}}</td>
                 <td>{{user.email}}</td>
                 <td>{{user.isAdmin ? "True" : "False"}}</td>
+                <td><a v-bind:href="'/admin/account/' + user.id"><i class="fa fa-sign-in"></i></a></td>
             </tr>
             </tbody>
         </table>
     </div>
-
 </template>
 
 <script>

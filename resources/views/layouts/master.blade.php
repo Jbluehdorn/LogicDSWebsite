@@ -44,7 +44,7 @@
             <li class="col-xs-3"><a href="/contact">Contact</a></li>
         </ul>
         <p class="col-xs-12" id="copyright">
-            Logic Development Studios &copy; {{\Carbon\Carbon::now()->year}}
+            Logic Development Studios <i class="fa fa-copyright"></i> {{\Carbon\Carbon::now()->year}}
         </p>
     </footer>
 </div>

@@ -1,3 +1,5 @@
+import Vuetable from 'vuetable/src/components/Vuetable.vue';
+import VuetablePagination from 'vuetable/src/components/VuetablePagination.vue';
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -13,10 +15,13 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+Vue.component('vuetable', Vuetable);
+Vue.component('vuetable-pagination', VuetablePagination);
 Vue.component('example', require('./components/Example.vue'));
 Vue.component('new-user-form', require('./components/new_user_form.vue'));
-Vue.component('all-users-table', require('./components/all_users_table.vue'))
+Vue.component('all-users-table', require('./components/all_users_table.vue'));
 
 const app = new Vue({
     el: '#body-content'
 });
+

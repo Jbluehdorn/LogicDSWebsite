@@ -17,17 +17,13 @@ Route::get('/games', 'HomeController@games');
 Route::get('/staff', 'HomeController@staff');
 Route::get('/contact', 'HomeController@contact');
 
-Route::get('/admin', 'AdminController@home');
-Route::get('/admin/new', 'AdminController@newUser');
-Route::get('/admin/logout', 'AdminController@logout');
-Route::get('/admin/account/{id}', 'AdminController@account');
-Route::post('/admin/post_user', 'AdminController@store');
-Route::get('/admin/unauthorized', function() {
+Route::get('/dashboard', 'DashboardController@home');
+Route::get('/dashboard/new', 'DashboardController@newUser');
+Route::get('/dashboard/logout', 'DashboardController@logout');
+Route::get('/dashboard/account/{id}', 'DashboardController@account');
+Route::post('/dashboard/post_user', 'DashboardController@store');
+Route::get('/dashboard/unauthorized', function() {
     return view('admin/unauthorized_access');
-});
-
-Route::get('/test', function() {
-    return view('test');
 });
 
 Auth::routes();

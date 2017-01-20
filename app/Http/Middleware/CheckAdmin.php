@@ -3,9 +3,8 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Auth;
 
-class CheckStaff
+class CheckAdmin
 {
     /**
      * Handle an incoming request.
@@ -16,7 +15,7 @@ class CheckStaff
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::check() && !Auth::User()->isStaff) {
+        if(Auth::check() && !Auth::User()->isAdmin) {
             return redirect('/dashboard/unauthorized');
         }
 

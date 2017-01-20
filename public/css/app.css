@@ -7724,6 +7724,14 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0 !important;
 }
 
+.fa-sign-in {
+  color: #ddd;
+}
+
+.fa-sign-in:hover, .fa-sign-in:active {
+  color: #CCC;
+}
+
 @-webkit-keyframes fadein {
   from {
     opacity: 0;
