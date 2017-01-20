@@ -16,10 +16,11 @@
                 <td>{{user.name}}</td>
                 <td>{{user.email}}</td>
                 <td>{{user.isAdmin ? "True" : "False"}}</td>
-                <td><a v-bind:href="'/admin/account/' + user.id"><i class="fa fa-sign-in"></i></a></td>
+                <td><a v-bind:href="'/dashboard/account/' + user.id"><i class="fa fa-sign-in"></i></a></td>
             </tr>
             </tbody>
         </table>
+        <v-paginator :options="options" :resource_url="resource_url" @update="updateResource"></v-paginator>
     </div>
 </template>
 
@@ -28,9 +29,22 @@
         mounted() {
           console.log(this.users);
         },
+        components() {
+          VPaginator: VuePaginator
+        },
         data() {
             return {
-                users: users
+                users: [],
+                resource_url: '/api/users',
+                options: {
+                    next_button_text: '>>',
+                    previous_button_text: '<<'
+                }
+            }
+        },
+        methods: {
+            updateResource(data) {
+                this.users = data;
             }
         }
     }
