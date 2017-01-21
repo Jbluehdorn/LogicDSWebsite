@@ -1,6 +1,9 @@
 <template>
     <div class="panel panel-default col-xs-12">
-        <table class="table">
+        <div class="loading-icon" v-if="loading">
+            <i class="fa fa-spin fa-circle-o-notch"></i>
+        </div>
+        <table class="table" v-show="!loading">
             <thead>
             <tr>
                 <th>&nbsp;</th>
@@ -40,6 +43,7 @@
         },
         data() {
             return {
+                loading: true,
                 users: [],
                 resource_url: '/api/users',
                 options: {
@@ -51,6 +55,7 @@
         methods: {
             updateResource(data) {
                 this.users = data;
+                this.loading = false;
             }
         }
     }

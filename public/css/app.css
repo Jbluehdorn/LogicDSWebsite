@@ -7906,4 +7906,9 @@ body, html {
   flex: 1;
 }
 
+.loading-icon {
+  font-size: 3em;
+  text-align: center;
+}
+
 /*# sourceMappingURL=app.css.map */
