@@ -5,7 +5,7 @@
                 <h3 class="panel-title">New User</h3>
             </div>
             <div class="panel-body">
-                <form action="/admin/post_user" method="POST" class="form-horizontal" id="new_user_form">
+                <form action="/dashboard/post_user" method="POST" class="form-horizontal" id="new_user_form">
                     <input type="hidden" name="_token" v-model="token" />
                     <div class="form-group">
                         <label for="name" class="col-xs-2">Name:</label>
@@ -28,6 +28,9 @@
                     <div class="checkbox col-xs-offset-2">
                         <label>
                             <input name="isAdmin" type="checkbox"> Admin?
+                        </label>
+                        <label>
+                            <input name="isStaff" type="checkbox"> Staff?
                         </label>
                     </div>
                     <button class="btn btn-primary col-xs-2 col-xs-offset-10" type="submit">Submit</button>

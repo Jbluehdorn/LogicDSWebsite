@@ -46,6 +46,6 @@ class DashboardController extends Controller
 
         User::create($request->all());
 
-        return redirect('/admin');
+        return redirect('/dashboard');
     }
 }

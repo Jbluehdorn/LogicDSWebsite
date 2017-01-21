@@ -27,6 +27,7 @@ $header-padding: 15px;
 // FontAwesome
 @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
 
+@import "components/all_users_table.scss";
 @import "components/header.scss";
 @import "components/navigation.scss";
 @import "components/footer.scss";

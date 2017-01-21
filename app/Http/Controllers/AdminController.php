@@ -14,6 +14,6 @@ class AdminController extends Controller
     }
 
     public function Users() {
-        return User::paginate(2);
+        return User::paginate(5);
     }
 }

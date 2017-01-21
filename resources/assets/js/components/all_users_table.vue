@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="panel panel-default col-xs-12">
         <table class="table">
             <thead>
             <tr>
@@ -19,8 +19,14 @@
                 <td><a v-bind:href="'/dashboard/account/' + user.id"><i class="fa fa-sign-in"></i></a></td>
             </tr>
             </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="6">
+                    <v-paginator :options="options" :resource_url="resource_url" @update="updateResource"></v-paginator>
+                </td>
+            </tr>
+            </tfoot>
         </table>
-        <v-paginator :options="options" :resource_url="resource_url" @update="updateResource"></v-paginator>
     </div>
 </template>
 
