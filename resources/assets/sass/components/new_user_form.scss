@@ -1,0 +1,22 @@
+#new_user_form {
+  .calendar {
+    color: #000000;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  #bio {
+    font-size: .9em;
+  }
+
+  header {
+    padding: 0;
+    span {
+      color: $header-color;
+      background-color: $primary-color;
+    }
+
+  }
+}

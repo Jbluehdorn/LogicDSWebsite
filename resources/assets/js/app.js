@@ -1,5 +1,3 @@
-// var VuePaginator = require('vuejs-paginator');
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * include Vue and Vue Resource. This gives a great starting point for
@@ -14,9 +12,11 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+Vue.component('datepicker', require('vuejs-datepicker'));
 Vue.component('v-paginator', require('vuejs-paginator'));
 Vue.component('new-user-form', require('./components/new_user_form.vue'));
 Vue.component('all-users-table', require('./components/all_users_table.vue'));
+Vue.component('modal', require('./components/modal.vue'));
 
 const app = new Vue({
     el: '#body-content'

@@ -9,6 +9,7 @@ use Hash;
 use App\User;
 use Auth;
 Use DB;
+use Carbon\Carbon;
 
 class DashboardController extends Controller
 {
@@ -41,8 +42,14 @@ class DashboardController extends Controller
         return view('admin/account')->with(compact('isUser', 'user', 'isAdmin'));
     }
 
+    public function checkUsernameAvailability(Request $request) {
+
+    }
+
     public function store(Request $request) {
-        $request->merge(['password' => Hash::make($request->password)]);
+        $request->merge(['birthDate' => new Carbon($request->birthDate)]);
+        $request->request->add(['password' => Hash::make($request->name . $request->birthDate->year)]);
+        dd($request->all());
 
         User::create($request->all());
 

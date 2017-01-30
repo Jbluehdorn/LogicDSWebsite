@@ -7886,6 +7886,27 @@ footer ul li a:hover, footer ul li a:visited, footer ul li a:active, footer ul l
   text-decoration: none;
 }
 
+#new_user_form .calendar {
+  color: #000000;
+}
+
+#new_user_form textarea {
+  resize: vertical;
+}
+
+#new_user_form #bio {
+  font-size: .9em;
+}
+
+#new_user_form header {
+  padding: 0;
+}
+
+#new_user_form header span {
+  color: #eee;
+  background-color: #139696;
+}
+
 body {
   background: #111;
   color: #ddd;
@@ -7909,6 +7930,11 @@ body, html {
 .loading-icon {
   font-size: 3em;
   text-align: center;
+}
+
+.form-group .additional-information {
+  text-align: right;
+  font-size: .8em;
 }
 
 /*# sourceMappingURL=app.css.map */

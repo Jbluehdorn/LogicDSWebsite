@@ -31,6 +31,7 @@ $header-padding: 15px;
 @import "components/header.scss";
 @import "components/navigation.scss";
 @import "components/footer.scss";
+@import "components/new_user_form.scss";
 
 
 body {
@@ -52,4 +53,11 @@ body, html {
 .loading-icon {
   font-size: 3em;
   text-align: center;
+}
+
+.form-group {
+  .additional-information {
+    text-align: right;
+    font-size: .8em;
+  }
 }

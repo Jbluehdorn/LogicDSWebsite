@@ -7,6 +7,7 @@
             <thead>
             <tr>
                 <th>&nbsp;</th>
+                <th>Username</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Admin</th>
@@ -17,6 +18,7 @@
             <tr v-for="user in users">
                 <td>{{user.id}}</td>
                 <td>{{user.name}}</td>
+                <td>{{user.firstName}} {{user.lastName}}</td>
                 <td>{{user.email}}</td>
                 <td>{{user.isAdmin ? "True" : "False"}}</td>
                 <td><a v-bind:href="'/dashboard/account/' + user.id"><i class="fa fa-sign-in"></i></a></td>
