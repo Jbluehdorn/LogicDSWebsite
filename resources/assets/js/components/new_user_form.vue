@@ -5,85 +5,70 @@
                 <h3 class="panel-title">New User</h3>
             </div>
             <div class="panel-body">
-                <form action="/dashboard/post_user" method="POST" class="form-horizontal" id="new_user_form" enctype="multipart/form-data">
+                <form action="/dashboard/post_user" method="POST" class="" id="new_user_form" enctype="multipart/form-data">
                     <input type="hidden" name="_token" v-model="token" />
                     <div class="row">
                         <div class="col-xs-6">
                             <div class="form-group">
-                                <label for="firstName" class="col-xs-4">First Name:</label>
-                                <div class="col-xs-8">
-                                    <input name="firstName" id="firstName" type="text" class="form-control">
-                                </div>
+                                <label for="firstName">First Name:</label>
+                                <input name="firstName" id="firstName" type="text" class="form-control">
                             </div>
                         </div>
                         <div class="col-xs-6">
                             <div class="form-group">
-                                <label for="lastName" class="col-xs-4">Last Name:</label>
-                                <div class="col-xs-8">
-                                    <input name="lastName" id="lastName" type="text" class="form-control">
-                                </div>
+                                <label for="lastName">Last Name:</label>
+                                <input name="lastName" id="lastName" type="text" class="form-control">
                             </div>
                         </div>
 
                     </div>
 
                     <div class="form-group">
-                        <label for="name" class="col-xs-2">Username:</label>
-                        <div class="col-xs-10">
-                            <input type="text" name="name" class="form-control" id="name" />
-                        </div>
+                        <label for="name">Username:</label>
+                        <input type="text" name="name" class="form-control" id="name" />
                     </div>
                     <div class="form-group">
-                        <label for="email" class="col-xs-2">Email:</label>
-                        <div class="col-xs-10">
-                            <input type="email" name="email" class="form-control col-xs-10" id="email" />
-                        </div>
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" class="form-control col-xs-10" id="email" />
                     </div>
                     <div class="form-group">
-                        <label for="birthDate" class="col-xs-2">Birth Date:</label>
+                        <label for="birthDate">Birth Date:</label>
                         <datepicker
                                 id="birthDate"
                                 name="birthDate"
                                 :inline="true"
                                 :format="format"
-                                :input-class="'form-control'"
-                                :wrapper-class="'col-xs-4 col-xs-offset-2'">
+                                :input-class="'form-control'">
                         </datepicker>
                     </div>
                     <hr>
-                    <div class="form-group col-xs-8 col-xs-offset-2">
+                    <div class="form-group">
                         <label for="type">Type:</label>
                         <select name="type" id="type" class="form-control" v-model="selectedType" v-on:change="updateType">
                             <option v-for="type in types">{{type}}</option>
                         </select>
                     </div>
 
-                    <div class="col-xs-12" v-if="isStaff">
+                    <div v-if="isStaff">
 
-                        <div class="form-group">
+                        <div class="form-group col-xs-12">
                             <label for="profilePicture">Profile Picture:</label>
                             <input type="file" id="profilePicture" name="profilePicture" accept=".jpg,.jpeg,.gif,.png">
                         </div>
-                        <div class="form-group">
-                            <label class="col-xs-2" for="position">Position:</label>
-                            <div class="col-xs-10">
-                                <input class="form-control" type="text" id="position" name="position">
-                            </div>
+                        <div class="form-group col-xs-12">
+                            <label for="position">Position:</label>
+                            <input class="form-control" type="text" id="position" name="position">
                         </div>
-                        <div class="form-group">
-                            <label class="col-xs-2" for="primary_phone_number">Phone:</label>
-                            <div class="col-xs-10">
-                                <input class="form-control" type="text" id="primary_phone_number" name="primary_phone_number" />
-                            </div>
+                        <div class="form-group col-xs-6">
+                            <label for="primary_phone_number">Phone:</label>
+                            <input class="form-control" type="text" id="primary_phone_number" name="primary_phone_number" />
                         </div>
-                        <div class="form-group">
-                            <label class="col-xs-2" for="secondary_phone_number">Alt Phone:</label>
-                            <div class="col-xs-10">
-                                <input type="text" class="form-control" id="secondary_phone_number" name="secondary_phone_number" />
-                            </div>
+                        <div class="form-group col-xs-6">
+                            <label for="secondary_phone_number">Alt Phone:</label>
+                            <input type="text" class="form-control" id="secondary_phone_number" name="secondary_phone_number" />
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group col-xs-12">
                             <label for="bio">Bio:</label>
                             <textarea name="bio" id="bio"  rows="5" class="form-control" v-model="bio"></textarea>
                             <p class="additional-information">
