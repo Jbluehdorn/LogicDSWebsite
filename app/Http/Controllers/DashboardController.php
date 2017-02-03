@@ -47,10 +47,11 @@ class DashboardController extends Controller
     }
 
     public function store(Request $request) {
-        $request->merge(['birthDate' => new Carbon($request->birthDate)]);
+        $request->merge([
+            'birthDate' => new Carbon($request->birthDate),
+            'isAdmin' => $request->isAdmin == 'true',
+            'isStaff' => $request->isStaff == 'true']);
         $request->request->add(['password' => Hash::make($request->name . $request->birthDate->year)]);
-
-//        dd($request);
 
         $user = User::create($request->all());
 
@@ -61,6 +62,8 @@ class DashboardController extends Controller
 
             dd($path);
         }
+
+        dd($request);
 
         return redirect('/dashboard');
     }
