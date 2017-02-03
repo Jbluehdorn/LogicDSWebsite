@@ -5,7 +5,7 @@
                 <h3 class="panel-title">New User</h3>
             </div>
             <div class="panel-body">
-                <form action="/dashboard/post_user" method="POST" class="form-horizontal" id="new_user_form">
+                <form action="/dashboard/post_user" method="POST" class="form-horizontal" id="new_user_form" enctype="multipart/form-data">
                     <input type="hidden" name="_token" v-model="token" />
                     <div class="row">
                         <div class="col-xs-6">
@@ -69,7 +69,9 @@
                             <label for="bio">Bio:</label>
                             <textarea name="bio" id="bio"  rows="5" class="form-control" v-model="bio"></textarea>
                             <p class="additional-information">
-                                This section uses Markdown. For a guide to Markdown, <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">click here</a>.
+                                This section uses Markdown. For a guide to Markdown, <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">click here</a>
+                                <br />
+                                Also, here's an <a href="http://www.webpagefx.com/tools/emoji-cheat-sheet/" target="_blank">emoji cheat sheet</a>
                             </p>
                         </div>
 

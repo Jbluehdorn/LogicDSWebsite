@@ -49,9 +49,18 @@ class DashboardController extends Controller
     public function store(Request $request) {
         $request->merge(['birthDate' => new Carbon($request->birthDate)]);
         $request->request->add(['password' => Hash::make($request->name . $request->birthDate->year)]);
-        dd($request->all());
 
-        User::create($request->all());
+//        dd($request);
+
+        $user = User::create($request->all());
+
+        if($user->isStaff) {
+            $path = $request->profilePicture->storeAs('avatars',
+                $user->lastName . $user->firstName . $user->id . '.' . $request->profilePicture->extension(),
+                'public');
+
+            dd($path);
+        }
 
         return redirect('/dashboard');
     }
