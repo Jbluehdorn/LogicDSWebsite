@@ -22,7 +22,7 @@ class UpdateUserTable extends Migration
         Schema::table('staff', function(Blueprint $table) {
             $table->dropColumn('firstName');
             $table->dropColumn('lastName');
-            $table->string('location');
+            $table->string('location')->default('');
         });
     }
 

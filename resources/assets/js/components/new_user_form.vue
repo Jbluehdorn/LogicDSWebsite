@@ -64,6 +64,24 @@
                             <label for="profilePicture">Profile Picture:</label>
                             <input type="file" id="profilePicture" name="profilePicture" accept=".jpg,.jpeg,.gif,.png">
                         </div>
+                        <div class="form-group">
+                            <label class="col-xs-2" for="position">Position:</label>
+                            <div class="col-xs-10">
+                                <input class="form-control" type="text" id="position" name="position">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-2" for="primary_phone_number">Phone:</label>
+                            <div class="col-xs-10">
+                                <input class="form-control" type="text" id="primary_phone_number" name="primary_phone_number" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-2" for="secondary_phone_number">Alt Phone:</label>
+                            <div class="col-xs-10">
+                                <input type="text" class="form-control" id="secondary_phone_number" name="secondary_phone_number" />
+                            </div>
+                        </div>
 
                         <div class="form-group">
                             <label for="bio">Bio:</label>

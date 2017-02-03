@@ -7718,6 +7718,7 @@ button.close {
 .form-group label {
   text-align: right;
   margin-top: 5px;
+  padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {

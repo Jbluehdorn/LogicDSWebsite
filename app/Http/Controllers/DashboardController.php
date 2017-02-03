@@ -10,6 +10,7 @@ use App\User;
 use Auth;
 Use DB;
 use Carbon\Carbon;
+use App\Staff;
 
 class DashboardController extends Controller
 {
@@ -59,8 +60,11 @@ class DashboardController extends Controller
             $path = $request->profilePicture->storeAs('avatars',
                 $user->lastName . $user->firstName . $user->id . '.' . $request->profilePicture->extension(),
                 'public');
+            $request->request->add(['id' => $user->id]);
 
-            dd($path);
+            $userStaff = Staff::create($request->all());
+            $userStaff->imageLocation = $path;
+            $userStaff->save();
         }
 
         dd($request);
