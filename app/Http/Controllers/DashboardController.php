@@ -60,15 +60,13 @@ class DashboardController extends Controller
             $path = $request->profilePicture->storeAs('avatars',
                 $user->lastName . $user->firstName . $user->id . '.' . $request->profilePicture->extension(),
                 'public');
-            $request->request->add(['id' => $user->id]);
+            $request->request->add(['id' => $user->id, 'imageLocation' => $path]);
 
-            $userStaff = Staff::create($request->all());
-            $userStaff->imageLocation = $path;
-            $userStaff->save();
+            Staff::create($request->all());
         }
 
         dd($request);
 
-        return redirect('/dashboard');
+        return redirect('/dashboard/account' . $user->id);
     }
 }
