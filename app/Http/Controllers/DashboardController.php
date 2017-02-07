@@ -15,8 +15,8 @@ use App\Staff;
 class DashboardController extends Controller
 {
     public function __construct() {
-        $this->middleware('auth');
-        $this->middleware('checkStaff', ['except' => 'logout']);
+        $this->middleware('auth', ['except' => ['checkUsernameAvailability', 'checkEmailAvailability']]);
+        $this->middleware('checkStaff', ['except' => ['logout']]);
     }
 
     public function home() {
@@ -44,7 +44,15 @@ class DashboardController extends Controller
     }
 
     public function checkUsernameAvailability(Request $request) {
+        $user = User::where('name', $request->username)->get();
 
+        return json_encode($user->count() == 0);
+    }
+
+    public function checkEmailAvailabiity(Request $request) {
+        $user = User::where('email', $request->email)->get();
+
+        return json_encode($user->count() == 0);
     }
 
     public function store(Request $request) {

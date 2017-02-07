@@ -38,7 +38,7 @@
 <script>
     export default {
         mounted() {
-          console.log(this.users);
+
         },
         components() {
           VPaginator: VuePaginator

@@ -7,6 +7,7 @@
             <div class="panel-body">
                 <form action="/dashboard/post_user" method="POST" class="" id="new_user_form" enctype="multipart/form-data">
                     <input type="hidden" name="_token" v-model="token" />
+                    {{usernameValid}}
                     <div class="row">
                         <div class="col-xs-6">
                             <div class="form-group">
@@ -99,9 +100,10 @@
             VueMarkdown
         },
         mounted() {
-            console.log(this.token);
             this.selectedType = this.types[1];
             this.updateType();
+            this.userName = 'jbluehdorn';
+            this.checkUsernameAvailability();
         },
         data() {
             return {
@@ -114,7 +116,9 @@
                 userName: '',
                 email: '',
                 bio: '',
-                modalShown: false
+                modalShown: false,
+                usernameValid: false,
+                emailValid: false
             }
         },
         methods: {
@@ -135,7 +139,13 @@
                 }
             },
             checkUsernameAvailability() {
-
+                var self = this;
+                this.$http.get('/api/checkUsernameAvailability', {params: {username: self.userName}}).then(response => {
+                    self.usernameValid = response;
+                    console.log(response);
+                }, response => {
+                    console.log(response);
+                });
             },
             checkEmailAvailability() {
 

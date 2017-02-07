@@ -18,3 +18,5 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:api');
 
 Route::get('/users', 'AdminController@Users');
+Route::get('/checkUsernameAvailability', 'DashboardController@checkUsernameAvailability');
+Route::get('/checkEmailAvailability', 'DashboardController@checkEmailAvailability');
