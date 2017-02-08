@@ -37,9 +37,6 @@
 
 <script>
     export default {
-        mounted() {
-
-        },
         components() {
           VPaginator: VuePaginator
         },

@@ -102,8 +102,7 @@
         mounted() {
             this.selectedType = this.types[1];
             this.updateType();
-            this.userName = 'jbluehdorn';
-            this.checkUsernameAvailability();
+            this.$store.state.errors.push('banan');
         },
         data() {
             return {
@@ -117,8 +116,9 @@
                 email: '',
                 bio: '',
                 modalShown: false,
-                usernameValid: false,
-                emailValid: false
+                usernameValid: null,
+                emailValid: null,
+                errors: []
             }
         },
         methods: {
@@ -141,13 +141,22 @@
             checkUsernameAvailability() {
                 var self = this;
                 this.$http.get('/api/checkUsernameAvailability', {params: {username: self.userName}}).then(response => {
-                    self.usernameValid = response;
-                    console.log(response);
+                    self.usernameValid = response.body;
                 }, response => {
+                    self.usernameValid = false;
+                    errors.push('Could not verify username');
                     console.log(response);
                 });
             },
             checkEmailAvailability() {
+                var self = this;
+                this.$http.get('/api/checkEmailAvailability', {params: {email: self.email}}).then(response => {
+                    self.emailValid = response.body;
+                }), response => {
+                    self.emailV = false;
+                    errors.push('Could not verify email');
+                    console.log(response);
+                };
 
             }
         }

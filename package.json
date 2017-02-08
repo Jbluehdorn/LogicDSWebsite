@@ -17,7 +17,8 @@
     "vue-markdown": "^2.1.3",
     "vue-resource": "^1.0.3",
     "vuejs-datepicker": "^0.5.5",
-    "vuejs-paginator": "^2.0.0"
+    "vuejs-paginator": "^2.0.0",
+    "vuex": "^2.1.2"
   },
   "dependencies": {}
 }

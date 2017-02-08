@@ -46,6 +46,9 @@
     </header>
 
     <div class="col-xs-12" id="main-content">
+        <ul>
+            <li v-for="error in errors">@{{error}}</li>
+        </ul>
         @yield('content')
     </div>
 
